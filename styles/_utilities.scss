@@ -1,0 +1,148 @@
+// BEGIN: Spacing
+$directions: ("l": "left", "t": "top", "r": "right", "b": "bottom");
+$spaces: '0', '2xs', 'xs', 'sm',  'base', 'md', 'lg', 'xl', '2xl', '3xl', 'auto';
+
+// Margin
+@each $space in $spaces {
+  @each $key, $prop in $directions {
+    .m#{$key}-#{$space} {
+      margin-#{$prop}: var(--spacing-#{$space});
+    }
+  }
+
+  .mx-#{$space} {
+    margin-left: var(--spacing-#{$space});
+    margin-right: var(--spacing-#{$space});
+  }
+  .my-#{$space} {
+    margin-top: var(--spacing-#{$space});
+    margin-bottom: var(--spacing-#{$space});
+  }
+}
+
+// Padding
+@each $space in $spaces {
+  @each $key, $prop in $directions {
+    .p#{$key}-#{$space} {
+      padding-#{$prop}: var(--spacing-#{$space});
+    }
+  }
+
+  .px-#{$space} {
+    padding-left: var(--spacing-#{$space});
+    padding-right: var(--spacing-#{$space});
+  }
+  .py-#{$space} {
+    padding-top: var(--spacing-#{$space});
+    padding-bottom: var(--spacing-#{$space});
+  }
+}
+// END: Spacing
+
+// BEGIN: Text
+$sizes: 'xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl';
+
+@each $size in $sizes {
+  .text-#{$size} {
+    font-size: var(--font-size-#{$size});
+    line-height: var(--line-height-#{$size});
+  }
+}
+
+.text-ellipsis {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// END: Text
+
+// BEGIN: Color
+$colors: 'primary', 'secondary', 'border', 'shadow', 'muted', 'error', 'info', 'success', 'warning';
+
+@each $color in $colors {
+  .fg-#{$color} {
+    color: var(--color-#{$color});
+  }
+  .bg-#{$color} {
+    background-color: var(--color-#{$color});
+  }
+}
+// END: Color
+
+// BEGIN: Color
+$displays: 'block', 'flex', 'grid', 'inline', 'inline-block', 'inline-flex', 'table', 'table-cell', 'table-row', 'none';
+
+@each $display in $displays {
+  .display-#{$display} {
+    display: #{$display};
+  }
+}
+// END: Color
+
+// BEGIN: Clamp
+$clamps: '1', '2', '3', 'none';
+
+@each $clamp in $clamps {
+  .clamp-#{$clamp} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$clamp};
+  }
+}
+// END: Clamp
+
+// BEGIN: Radius
+$radiuses: 'xs', 'sm', 'base', 'lg', 'xl', 'circle', 'none';
+
+.radius {
+  border-radius: var(--radius-base);
+}
+.radius-t {
+  border-top-left-radius: var(--radius-base);
+  border-top-right-radius: var(--radius-base);
+}
+.radius-r {
+  border-top-right-radius: var(--radius-base);
+  border-bottom-right-radius: var(--radius-base);
+}
+.radius-b {
+  border-bottom-left-radius: var(--radius-base);
+  border-bottom-right-radius: var(--radius-base);
+}
+.radius-l {
+  border-top-left-radius: var(--radius-base);
+  border-bottom-left-radius: var(--radius-base);
+}
+
+@each $radius in $radiuses {
+  .radius-#{$radius} {
+    border-radius: var(--radius-#{$radius});
+  }
+  .radius-t-#{$radius} {
+    border-top-left-radius: var(--radius-#{$radius});
+    border-top-right-radius: var(--radius-#{$radius});
+  }
+  .radius-r-#{$radius} {
+    border-top-right-radius: var(--radius-#{$radius});
+    border-bottom-right-radius: var(--radius-#{$radius});
+  }
+  .radius-b-#{$radius} {
+    border-bottom-left-radius: var(--radius-#{$radius});
+    border-bottom-right-radius: var(--radius-#{$radius});
+  }
+  .radius-l-#{$radius} {
+    border-top-left-radius: var(--radius-#{$radius});
+    border-bottom-left-radius: var(--radius-#{$radius});
+  }
+}
+// END: Radius
+
+// Others
+$overflows: 'auto', 'hidden', 'visible', 'scroll';
+
+@each $overflow in $overflows {
+  .overflow-#{$overflow} {
+    overflow: #{$overflow};
+  }
+}
