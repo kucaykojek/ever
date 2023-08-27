@@ -1,8 +1,3 @@
-
 export default function Home() {
-  return (
-    <main>
-      Kucasdasdasdasdasdasd asdasd asdasd
-    </main>
-  )
+  return <main>Kucasdasdasdasdasdasd asdasd asdasd</main>
 }
