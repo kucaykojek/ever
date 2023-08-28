@@ -13,7 +13,7 @@ cp env.sample .env && npm i
 
 ### Packages
 
-- CSS framework: [tailwindcss](https://tailwindcss.com)
+- CSS pre-processor: [scss](https://sass-lang.com)
 - Icon library: [lucide](https://lucide.dev)
 - Code Quality:
   - [husky](https://typicode.github.io/husky)
@@ -27,4 +27,4 @@ cp env.sample .env && npm i
 
 ### Resources
 - Photos: [Lorem Picsum](https://picsum.photos)
-- Fonts: [Poppins](https://fonts.google.com/specimen/Poppins/about)
+- Fonts: [Rubik](https://fonts.google.com/specimen/Rubik/about)
