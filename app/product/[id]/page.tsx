@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import ProductDetail from '@/components/Product/ProductDetail'
@@ -11,10 +11,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  _?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id
   const baseUrl = process.env.NEXT_PUBLIC_API_URL
 
