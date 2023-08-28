@@ -57,7 +57,7 @@ $sizes: 'xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl';
 // END: Text
 
 // BEGIN: Color
-$colors: 'primary', 'secondary', 'border', 'shadow', 'muted', 'error', 'info', 'success', 'warning';
+$colors: 'primary', 'secondary', 'border', 'shadow', 'muted', 'error', 'info', 'success', 'warning', 'white', 'accent';
 
 @each $color in $colors {
   .fg-#{$color} {
@@ -138,6 +138,48 @@ $radiuses: 'xs', 'sm', 'base', 'lg', 'xl', 'circle', 'none';
 }
 // END: Radius
 
+// BEGIN: Alignment
+$aligns: 'left', 'right', 'center';
+
+@each $align in $aligns {
+  .align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+$textAligns: 'left', 'right', 'center';
+
+@each $align in $textAligns {
+  .align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+$verticalAligns: 'top', 'middle', 'bottom';
+
+@each $align in $verticalAligns {
+  .align-#{$align} {
+    vertical-align: #{$align};
+  }
+}
+
+$itemsAligns: 'start', 'center', 'end';
+
+@each $align in $verticalAligns {
+  .items-#{$align} {
+    align-items: #{$align};
+  }
+}
+
+$contentAligns: 'start', 'center', 'end';
+
+@each $align in $contentAligns {
+  .content-#{$align} {
+    justify-content: #{$align};
+  }
+}
+// END: Alignment
+
 // Others
 $overflows: 'auto', 'hidden', 'visible', 'scroll';
 
@@ -145,4 +187,10 @@ $overflows: 'auto', 'hidden', 'visible', 'scroll';
   .overflow-#{$overflow} {
     overflow: #{$overflow};
   }
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

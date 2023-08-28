@@ -1,0 +1,105 @@
+@import "@/styles/mixins.scss";
+
+$name: "product-card";
+
+.#{$name} {
+  position: relative;
+  background-color: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+
+  @include transition-all();
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: white;
+
+    .#{$name}__image {
+      width: 120%;
+    }
+
+
+    .#{$name}__action-cart {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__commission {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    background: var(--color-error);
+    color: white;
+    padding: 0.75em;
+
+    border-bottom-left-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+
+    @include transition-all();
+  }
+
+  &__image {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    margin-bottom: -2.25rem;
+
+    @include transition-all();
+  }
+
+  &__price {
+    position: relative;
+    z-index: 10;
+    margin: 0 1rem 0 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  &__name {
+    padding: 1rem;
+  }
+
+  &__action {
+    display: flex;
+    padding: 1rem;
+
+    button {
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.5rem;
+      font-family: var(--font-sans);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-base);
+      cursor: pointer;
+
+      @include transition-all();
+    }
+
+    &-cart {
+      flex-grow: 1;
+      border-top-left-radius: var(--radius-circle);
+      border-bottom-left-radius: var(--radius-circle);
+    }
+
+    &-love {
+      width: 3rem;
+      color: var(--color-error);
+
+      border-top-right-radius: var(--radius-circle);
+      border-bottom-right-radius: var(--radius-circle);
+    }
+  }
+}

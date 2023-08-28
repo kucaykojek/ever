@@ -1,5 +1,20 @@
-@import './_variables.scss';
-@import './_utilities.scss';
+@import "./_variables.css";
+@import "./_reset.css";
+@import "./_components.scss";
+@import "./_utilities.scss";
+
+/* Breakpoints snippet */
+/* Tablets */
+/* @media (min-width: 640px) { } */
+
+/* Bigger tablets */
+/* @media (min-width: 768px) { } */
+
+/* Desktop screen or landscape tablet */
+/* @media (min-width: 1024px) { } */
+
+/* Widescreens */
+/* @media (min-width: 1280px) { } */
 
 * {
   box-sizing: border-box;
@@ -16,9 +31,35 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: var(--spacing-base);
+
+  @media (min-width: 1024px) {
+    width: 60rem;
+  }
+
+  @media (min-width: 1280px) {
+    width: 70rem;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
