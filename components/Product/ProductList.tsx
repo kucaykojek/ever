@@ -7,6 +7,7 @@ import { useScroll } from '@/hooks/document'
 import fetchJson from '@/libs/fetch-json'
 
 import ProductCard from './ProductCard'
+import ProductCardSkeleton from './ProductCardSkeleton'
 import './ProductList.scss'
 
 /* eslint no-unused-vars: 0, unused-imports/no-unused-vars: 0 */
@@ -23,7 +24,7 @@ export default function ProductList({
   const limit = PropsType.catalog ? 10 : 4
   const [page, setPage] = useState<number>(2)
   const [products, setProducts] = useState<Product[]>([])
-  const [_, setFetching] = useState<boolean>(true)
+  const [fetching, setFetching] = useState<boolean>(true)
   const [hasReachMax, setHasReachMax] = useState<boolean>(false)
   const { fromBottom } = useScroll()
 
@@ -85,6 +86,10 @@ export default function ProductList({
         {products.map((product, productIndex) => (
           <ProductCard key={`product-item-${productIndex}`} product={product} />
         ))}
+        {fetching &&
+          [...Array(4)].map((_, index) => (
+            <ProductCardSkeleton key={`skeleton-${index}`} />
+          ))}
       </div>
     </div>
   )

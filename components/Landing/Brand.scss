@@ -5,6 +5,7 @@ $name: "landing-brand";
   position: relative;
   background-color: var(--background);
   padding: 2rem 0;
+  background-color: white;
 
   &::before {
     position: absolute;
@@ -41,9 +42,5 @@ $name: "landing-brand";
     font-weight: 600;
     margin-bottom: 2rem;
     color: var(--color-primary);
-  }
-
-  .slick-slider {
-    background-color: white;
   }
 }

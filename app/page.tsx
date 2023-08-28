@@ -7,7 +7,9 @@ export default function Home() {
     <div>
       <LandingHero />
       <Brand />
-      <ProductList type={0} />
+      <div className="mt-base">
+        <ProductList type={0} />
+      </div>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 'use client'
 
-import { Search, ShoppingBasket } from 'lucide-react'
+import { Menu, Search, ShoppingBasket, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useScroll } from '@/hooks/document'
 
@@ -11,6 +11,7 @@ import './Header.scss'
 
 export default function Header() {
   const { fromTop } = useScroll()
+  const [showMenu, setShowMenu] = useState<boolean>(false)
 
   const isStick = useMemo(() => {
     return fromTop > 40 // mt-10
@@ -19,17 +20,20 @@ export default function Header() {
   return (
     <header className={`header${isStick ? ' is-stick' : ''}`}>
       <div className="container">
-        <Link href="/">
-          <Image
-            src="/logo.png"
-            width={421}
-            height={96}
-            alt="evermos"
-            className="header__logo"
-          />
+        <Link href="/" className="header__logo">
+          <Image src="/logo.png" width={421} height={96} alt="evermos" />
         </Link>
 
-        <ul className="header__nav">
+        <div className="header__toggle">
+          <a onClick={() => setShowMenu(!showMenu)}>
+            <Menu />
+          </a>
+          <a>
+            <User />
+          </a>
+        </div>
+
+        <ul className={`header__nav ${showMenu && 'active'}`}>
           <li>
             <Link href="/">Kategori</Link>
           </li>

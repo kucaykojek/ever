@@ -52,12 +52,12 @@ $name: "product-detail";
     height: 2.5rem;
     border-radius: var(--radius-base);
     color: var(--color-primary);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 
     @include transition-all();
 
     &:hover {
-      background-color: var(--color-secondary);
+      background-color: white;
       color: var(--foreground);
     }
 
@@ -229,47 +229,4 @@ $name: "product-detail";
     }
   }
   // END: Body
-
-  // &__action {
-  //   display: flex;
-  //   padding: 1rem;
-  //   margin-left: auto;
-
-  //   button {
-  //     outline: none;
-  //     border: none;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     height: 2.5rem;
-  //     font-family: var(--font-sans);
-  //     font-size: var(--font-size-base);
-  //     line-height: var(--line-height-base);
-  //     cursor: pointer;
-
-  //     @include transition-all();
-  //   }
-
-  //   &-cart {
-  //     padding: 0 1rem;
-  //     flex-grow: 1;
-  //     border-top-left-radius: var(--radius-lg);
-  //     border-bottom-left-radius: var(--radius-lg);
-  //     background-color: var(--color-primary);
-  //     color: white;
-
-  //     &:hover {
-  //       background-color: var(--color-accent);
-  //       color: var(--foreground);
-  //     }
-  //   }
-
-  //   &-love {
-  //     width: 2.5rem;
-  //     color: var(--color-error);
-
-  //     border-top-right-radius: var(--radius-lg);
-  //     border-bottom-right-radius: var(--radius-lg);
-  //   }
-  // }
 }

@@ -1,6 +1,14 @@
 'use client'
 
-import { Heart, Minus, Plus, Share2, ShoppingBasket, Star } from 'lucide-react'
+import {
+  Expand,
+  Heart,
+  Minus,
+  Plus,
+  Share2,
+  ShoppingBasket,
+  Star
+} from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -34,6 +42,12 @@ export default function ProductDetail({ product }: { product: Product }) {
             className="product-detail__action-icon product-detail__action-icon--share"
           >
             <Share2 />
+          </button>
+          <button
+            type="button"
+            className="product-detail__action-icon product-detail__action-icon--expand"
+          >
+            <Expand />
           </button>
         </div>
       </div>
